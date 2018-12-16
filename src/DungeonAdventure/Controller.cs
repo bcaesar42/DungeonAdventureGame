@@ -20,6 +20,12 @@ namespace DungeonAdventure
         public static void Log(string message)
         {
             Logs.Items.Add(message);
+            ScrollToLastItem();
+        }
+
+        private static void ScrollToLastItem()
+        {
+            Logs.ScrollIntoView(Logs.Items[Logs.Items.Count - 1]);
         }
 
         public static string GetInput()

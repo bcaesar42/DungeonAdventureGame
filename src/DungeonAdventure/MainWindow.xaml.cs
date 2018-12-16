@@ -33,7 +33,9 @@ namespace DungeonAdventure
 
         private void NotifyEnterButtonListeners(object sender, RoutedEventArgs e)
         {
-            Controller.Log("Button Pressed");
+            Random random = new Random();
+            Controller.Log(random.Next(1, 1001).ToString());
+            //Controller.Log("Button Pressed");
         }
     }
 }
