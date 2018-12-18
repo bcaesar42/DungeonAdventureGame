@@ -19,6 +19,8 @@ namespace DungeonAdventure
 {
     public partial class MainWindow : Window
     {
+        public Game.DungeonAdventure Adventure { get; private set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -26,9 +28,14 @@ namespace DungeonAdventure
             Controller.Logs = LogBox;
             Controller.InputBox = InputBox;
             Controller.Enter = EnterButton;
-            Game.DungeonAdventure adventure = new Game.DungeonAdventure();
-            //Controller.Map = adventure.Map;
-            //adventure.PlayGame();
+            //Loaded += OnLoaded_StartNewGame;
+        }
+
+        private void OnLoaded_StartNewGame(object sender, System.EventArgs e)
+        {
+            Adventure = new Game.DungeonAdventure();
+            Controller.Map = Adventure.Map;
+            Adventure.PlayGame();
         }
 
         private void NotifyEnterButtonListeners(object sender, RoutedEventArgs e)

@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="Dungeon Adventure" Height="450" Width="800"
         Topmost="True"
-        Background="Gray">
+        Background="Gray"
+        Loaded="OnLoaded_StartNewGame">
+    
     <Grid Margin="2,2">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -24,7 +26,7 @@
               HeadersVisibility="None"
               Grid.Column="0" Grid.Row="0"
               Grid.RowSpan="3"
-              ItemsSource="{Binding Source=Controller, Path=Map}">
+              ItemsSource="{Binding Source=Controller, Path=Map.Rooms}">
         </DataGrid>
 
         <ListBox x:Name="LogBox" Background="Tan"

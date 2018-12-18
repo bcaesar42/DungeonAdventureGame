@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Threading;
 using System.Runtime.CompilerServices;
+using System.Windows;
 
 namespace DungeonAdventure
 {
@@ -41,16 +42,5 @@ namespace DungeonAdventure
         {
             return GetInput();
         }
-
-        //public static void StartNewGame()
-        //{
-        //    new Thread(() =>
-        //   {
-        //       Console.WriteLine("Start of new Thread:");
-        //       Game = new Game.DungeonAdventure();
-        //       Map = Game.Map;
-        //       Game.PlayGame();
-        //   }).Start();
-        //}
     }
 }
