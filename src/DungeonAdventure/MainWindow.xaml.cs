@@ -33,7 +33,7 @@ namespace DungeonAdventure
             Controller.Logs = LogBox;
             Controller.InputBox = InputBox;
             Controller.Enter = EnterButton;
-            new Thread(StartNewGame).Start();
+            //new Thread(StartNewGame).Start();
         }
 
         private void StartNewGame()
