@@ -15,16 +15,17 @@ namespace DungeonAdventure.Game
 
         public DungeonAdventure()
         {
+            Controller.Log("You are trapped in a dungeon.");
+            Controller.Log("In order to escape: You must locate all 4 pillars of OO, then go to/find the exit.");
+            Controller.Log("Good Luck! :)");
+            Controller.Log();
+
             Map = Dungeon.GenerateDungeon();
             Player = new Player(Map);
         }
 
         public void PlayGame()
         {
-            Controller.Log("You are trapped in a dungeon.");
-            Controller.Log("In order to escape: You must locate all 4 pillars of OO, then go to/find the exit.");
-            Controller.Log("Good Luck! :)");
-
             while (Player.Character.StillAlive && 
                   (Player.PillarsFound < 4 || Player.CurrentLocation != Map.ExitLocation))
             {

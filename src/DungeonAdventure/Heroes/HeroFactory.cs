@@ -37,6 +37,8 @@ namespace DungeonAdventure.Heroes
                 throw new ArgumentException("Null or empty parameter.");
             }
 
+            Controller.Log("Please select which kind of hero do you want to play as:");
+
             while (true)
             {
                 for (int index = 0; index < heroOptions.Count; index++)
