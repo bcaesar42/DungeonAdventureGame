@@ -48,7 +48,6 @@ namespace DungeonAdventure.Heroes
 
                 try
                 {
-                    string userInput = Controller.GetInput();
                     int selection = int.Parse(Controller.GetInput());
                     if (selection < 1 || selection > heroOptions.Count)
                     {

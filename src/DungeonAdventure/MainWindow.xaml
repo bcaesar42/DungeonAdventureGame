@@ -6,11 +6,9 @@
         xmlns:local="clr-namespace:DungeonAdventure"
         mc:Ignorable="d"
         Title="Dungeon Adventure" Height="450" Width="800"
-        
         Background="Gray">
-        <!--Topmost="True"-->
-    
-    <Grid Margin="2,2">
+
+    <Grid Margin="3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>

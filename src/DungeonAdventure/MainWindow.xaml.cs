@@ -23,15 +23,20 @@ namespace DungeonAdventure
 
         public MainWindow()
         {
-            this.DataContext = this;
-            Controller.Logs = LogBox;
-            Controller.InputBox = InputBox;
-            Controller.Enter = EnterButton;
-            Loaded += OnLoaded_StartNewGame;
+            DataContext = this;
+            this.ContentRendered += OnLoad_IntializeControllerThenStartGame;
             InitializeComponent();
         }
 
-        private void OnLoaded_StartNewGame(object sender, System.EventArgs e)
+        private void OnLoad_IntializeControllerThenStartGame(object sender, System.EventArgs e)
+        {
+            Controller.Logs = LogBox;
+            Controller.InputBox = InputBox;
+            Controller.Enter = EnterButton;
+            StartNewGame();
+        }
+
+        private void StartNewGame()
         {
             Adventure = new Game.DungeonAdventure();
             Controller.Map = Adventure.Map;
@@ -42,7 +47,6 @@ namespace DungeonAdventure
         {
             Random random = new Random();
             Controller.Log($"Button Pressed: {random.Next(1, 1001)}");
-            //Controller.Log("Button Pressed");
         }
     }
 }

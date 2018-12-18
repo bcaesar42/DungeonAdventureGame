@@ -20,20 +20,25 @@ namespace DungeonAdventure
 
         public static void Log(string message)
         {
-            Logs?.Items.Add(message);
+            ListBoxItem newEntry = new ListBoxItem();
+            newEntry.Content = message;
+            Logs?.Items?.Add(newEntry);
             ScrollToLastItem();
         }
 
         private static void ScrollToLastItem()
         {
-            Logs.ScrollIntoView(Logs.Items[Logs.Items.Count - 1]);
+            Logs?.ScrollIntoView(Logs.Items[Logs.Items.Count - 1]);
         }
 
         public static string GetInput()
         {
-            string temp = InputBox.Text;
-            InputBox.Text = "";
-            return temp;
+            string[] testValues = { "1", "up" };
+            Random rand = new Random();
+            return testValues[rand.Next(2)];
+            //string temp = InputBox.Text;
+            //InputBox.Text = "";
+            //return temp;
         }
 
         /*Seperate method that may be changed to allow
