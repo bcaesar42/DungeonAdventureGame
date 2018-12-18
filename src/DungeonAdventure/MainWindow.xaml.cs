@@ -26,7 +26,7 @@ namespace DungeonAdventure
             Controller.Logs = LogBox;
             Controller.InputBox = InputBox;
             Controller.Enter = EnterButton;
-            //Game.DungeonAdventure adventure = new Game.DungeonAdventure();
+            Game.DungeonAdventure adventure = new Game.DungeonAdventure();
             //Controller.Map = adventure.Map;
             //adventure.PlayGame();
         }
@@ -34,7 +34,7 @@ namespace DungeonAdventure
         private void NotifyEnterButtonListeners(object sender, RoutedEventArgs e)
         {
             Random random = new Random();
-            Controller.Log(random.Next(1, 1001).ToString());
+            Controller.Log($"Button Pressed: {random.Next(1, 1001)}");
             //Controller.Log("Button Pressed");
         }
     }

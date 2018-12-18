@@ -38,7 +38,6 @@ namespace DungeonAdventure.Characters
                 return CurrentLocation.Y > 0;
             }
         }
-
         public bool CanMoveLeft
         {
             get
