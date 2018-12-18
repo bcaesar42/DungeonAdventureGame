@@ -23,12 +23,12 @@ namespace DungeonAdventure
 
         public MainWindow()
         {
-            InitializeComponent();
             this.DataContext = this;
             Controller.Logs = LogBox;
             Controller.InputBox = InputBox;
             Controller.Enter = EnterButton;
-            //Loaded += OnLoaded_StartNewGame;
+            Loaded += OnLoaded_StartNewGame;
+            InitializeComponent();
         }
 
         private void OnLoaded_StartNewGame(object sender, System.EventArgs e)

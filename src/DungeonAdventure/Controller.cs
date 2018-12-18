@@ -20,7 +20,7 @@ namespace DungeonAdventure
 
         public static void Log(string message)
         {
-            Logs.Items.Add(message);
+            Logs?.Items.Add(message);
             ScrollToLastItem();
         }
 

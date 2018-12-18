@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:DungeonAdventure"
         mc:Ignorable="d"
         Title="Dungeon Adventure" Height="450" Width="800"
-        Topmost="True"
-        Background="Gray"
-        Loaded="OnLoaded_StartNewGame">
+        
+        Background="Gray">
+        <!--Topmost="True"-->
     
     <Grid Margin="2,2">
         <Grid.ColumnDefinitions>
