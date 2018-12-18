@@ -20,10 +20,13 @@ namespace DungeonAdventure
 
         public static void Log(string message)
         {
-            ListBoxItem newEntry = new ListBoxItem();
-            newEntry.Content = message;
-            Logs?.Items?.Add(newEntry);
-            ScrollToLastItem();
+            Logs?.Dispatcher.Invoke(() =>
+            {
+                ListBoxItem newEntry = new ListBoxItem();
+                newEntry.Content = message;
+                Logs?.Items?.Add(newEntry);
+                ScrollToLastItem();
+            });
         }
 
         private static void ScrollToLastItem()
