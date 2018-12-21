@@ -24,7 +24,7 @@
               HeadersVisibility="None"
               Grid.Column="0" Grid.Row="0"
               Grid.RowSpan="2"
-              ItemsSource="{Binding Source=Controller, Path=Map.Rooms}">
+              ItemsSource="{Binding Source=Controller.Map, Path=Rooms}">
         </DataGrid>
 
         <ListBox x:Name="LogBox" Background="Tan"

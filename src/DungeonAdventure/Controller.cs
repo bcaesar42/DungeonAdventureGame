@@ -35,6 +35,18 @@ namespace DungeonAdventure
             Log("");
         }
 
+        public static void LogList(List<string> list)
+        {
+            string toReturn = "";
+
+            foreach (string item in list ?? new List<string>())
+            {
+                toReturn += item;
+            }
+
+            Log(toReturn);
+        }
+
         private static void ScrollToLastItem()
         {
             Logs?.ScrollIntoView(Logs.Items[Logs.Items.Count - 1]);
@@ -42,9 +54,9 @@ namespace DungeonAdventure
 
         public static string GetInput()
         {
-            string[] testValues = { "1", "up" };
+            string[] testValues = { "1", "up", "down", "left", "right" };
             Random rand = new Random();
-            return testValues[rand.Next(2)];
+            return testValues[rand.Next(testValues.Length)];
             //string temp = InputBox.Text;
             //InputBox.Text = "";
             //return temp;

@@ -94,7 +94,7 @@ namespace DungeonAdventure.Characters
             do
             {
                 Controller.Log("Which direction do you want to move?");
-                Controller.Log($"Valid Options: {validMoves}.");
+                Controller.Log($"Valid Options: {string.Join(", " , validMoves)}.");
                 direction = Controller.GetDirection()?.ToLower();
             } while (string.IsNullOrEmpty(direction) || !validMoves.Contains(direction));
 
@@ -137,8 +137,8 @@ namespace DungeonAdventure.Characters
 
             Room newLocation = Dungeon?.Rooms[CurrentLocation.Y][CurrentLocation.X];
 
-            newLocation.WasVisited = true;
             newLocation?.PerformRoomActions(this);
+            newLocation.WasVisited = true;
         }
     }
 }
