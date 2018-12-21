@@ -19,8 +19,6 @@ namespace DungeonAdventure
 {
     public partial class MainWindow : Window
     {
-        public Game.DungeonAdventure Adventure { get; private set; }
-
         public MainWindow()
         {
             DataContext = this;
@@ -33,12 +31,14 @@ namespace DungeonAdventure
             Controller.Logs = LogBox;
             Controller.InputBox = InputBox;
             Controller.Enter = EnterButton;
-            new Thread(StartNewGame).Start();
+            Thread GameThread = new Thread(StartNewGame);
+            GameThread.Name = "GameThread";
+            GameThread.Start();
         }
 
         private void StartNewGame()
         {
-            Adventure = new Game.DungeonAdventure();
+            Game.DungeonAdventure Adventure = new Game.DungeonAdventure();
             Controller.Map = Adventure.Map;
             Adventure.PlayGame();
         }

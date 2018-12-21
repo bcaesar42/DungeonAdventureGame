@@ -41,9 +41,9 @@ namespace DungeonAdventure.Locations
                 Rooms[row] = new Room[DUNGEON_WIDTH];
             }
 
-            TopRow = GetRoomPositionsInRow(0);
+            BottomRow = GetRoomPositionsInRow(0);
             RightColumn = GetRoomPositionsInColumn(Width - 1);
-            BottomRow = GetRoomPositionsInRow(Height - 1);
+            TopRow = GetRoomPositionsInRow(Height - 1);
             LeftColumn = GetRoomPositionsInColumn(0);
         }
 
