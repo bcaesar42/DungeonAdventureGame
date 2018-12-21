@@ -26,7 +26,7 @@ namespace DungeonAdventure
                 newEntry.Content = message;
                 newEntry.FontSize = 6;
                 Logs?.Items?.Add(newEntry);
-                ScrollToLastItem();
+                //ScrollToLastItem();
             });
         }
 
