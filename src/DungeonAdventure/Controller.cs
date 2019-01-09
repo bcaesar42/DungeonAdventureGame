@@ -20,13 +20,13 @@ namespace DungeonAdventure
 
         public static void Log(string message)
         {
-            Logs?.Dispatcher.BeginInvoke(new Action(() =>
+            Logs?.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, new Action(() =>
             {
                 ListBoxItem newEntry = new ListBoxItem();
                 newEntry.Content = message;
                 newEntry.FontSize = 6;
                 Logs?.Items?.Add(newEntry);
-                ScrollToLastItem();
+                //ScrollToLastItem();
             }));
         }
 

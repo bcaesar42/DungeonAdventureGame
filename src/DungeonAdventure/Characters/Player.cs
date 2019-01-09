@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DungeonAdventure.Characters
@@ -86,6 +87,15 @@ namespace DungeonAdventure.Characters
             return validMoves;
         }
 
+        private readonly ManualResetEvent _mre = new ManualResetEvent(false);
+        private string _userMove;
+
+        private void EnterMovePressed()
+        {
+            _userMove = "Foo";
+            _mre.Set();
+        }
+
         private string GetDirectionFromUser()
         {
             List<string> validMoves = ListValidMoves();
@@ -95,7 +105,10 @@ namespace DungeonAdventure.Characters
             {
                 Controller.Log("Which direction do you want to move?");
                 Controller.Log($"Valid Options: {string.Join(", " , validMoves)}.");
+
+                _mre.WaitOne();
                 direction = Controller.GetDirection()?.ToLower();
+                _mre.Reset();
             } while (string.IsNullOrEmpty(direction) || !validMoves.Contains(direction));
 
             return direction;
