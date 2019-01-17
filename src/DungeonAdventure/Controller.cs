@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Threading;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace DungeonAdventure
 {
@@ -20,13 +21,13 @@ namespace DungeonAdventure
 
         public static void Log(string message)
         {
-            Logs?.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background, new Action(() =>
+            Logs?.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
             {
                 ListBoxItem newEntry = new ListBoxItem();
                 newEntry.Content = message;
                 newEntry.FontSize = 6;
                 Logs?.Items?.Add(newEntry);
-                //ScrollToLastItem();
+                ScrollToLastItem();
             }));
         }
 
